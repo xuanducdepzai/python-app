@@ -62,6 +62,9 @@
     <property name="text">
      <string/>
     </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
@@ -263,6 +266,33 @@ color:rgb(255, 255, 255)</string>
      <string>How to make account</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>140</y>
+      <width>31</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+background: none;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../img/16-removebg-preview.png</normaloff>../img/16-removebg-preview.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
+    </property>
+   </widget>
    <zorder>label_5</zorder>
    <zorder>label</zorder>
    <zorder>lineEdit_2</zorder>
@@ -274,6 +304,7 @@ color:rgb(255, 255, 255)</string>
    <zorder>lineEdit_3</zorder>
    <zorder>pushButton_6</zorder>
    <zorder>pushButton</zorder>
+   <zorder>pushButton_2</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
