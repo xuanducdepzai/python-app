@@ -21,19 +21,19 @@ class Messagebox ():
         box.exe()
 
 class Login(QMainWindow):
-    def __init__(seft):
+    def __init__(self):
         super().__init__()
-        uic.load("ui/login,ui")
+        uic.loadUi("ui/login.ui",self)
 
-        seft.email = seft.findChile(QPushButton),"txt_email"
-        seft.password = seft.findChile(QPushButton),"txt_password"
-        seft.btn_login = seft.findChile(QPushButton),"txt_login"
-        seft.btn_register = seft.findChile(QPushButton),"txt_register"
-        seft.btn_eye_p = seft.findChile(QPushButton),"txt_eye_p"
+        self.email = self.findChild(QLineEdit,"txt_email")
+        self.password = self.findChild(QLineEdit,"txt_password")
+        self.btn_login = self.findChild(QPushButton,"txt_login")
+        self.btn_register = self.findChild(QPushButton,"txt_register")
+        self.btn_eye_p = self.findChild(QPushButton,"txt_eye_p")
 
-        seft.btn_login.clicked.connect(seft.login)
-        seft.btn_register.clicked.connect(seft.show_register)
-        seft.btn_eye_p.clicked.connect(lambda: seft.hiddenOrShow(seft.password,seft.btn_eye_p))
+        self.btn_login.clicked.connect(self.login)
+        self.btn_register.clicked.connect(self.show_register)
+        self.btn_eye_p.clicked.connect(lambda: self.hiddenOrShow(self.password,self.btn_eye_p))
 
     def hiddenOrShow(self, input:QLineEdit, button:QPushButton):
         if input.echoMode() == QLineEdit.EchoMode.Password:
@@ -65,6 +65,11 @@ class Login(QMainWindow):
             return
 
         msg.error_box("Email hoặc mật khẩu không đúng")
+        
+    def show_register(self):
+        self.register = Register()
+        self.register.show()
+        self.hide()
     
     def show_home(self,user_id):
         self.home = Home(user_id)
