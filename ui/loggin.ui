@@ -270,6 +270,33 @@ color:rgb(255, 255, 255)</string>
      <string>Sign up</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>180</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: none;
+border: none;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../img/17-removebg-preview (1).png</normaloff>../img/17-removebg-preview (1).png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
+    </property>
+   </widget>
    <zorder>label_5</zorder>
    <zorder>label</zorder>
    <zorder>lineEdit</zorder>
@@ -282,6 +309,7 @@ color:rgb(255, 255, 255)</string>
    <zorder>pushButton</zorder>
    <zorder>pushButton_3</zorder>
    <zorder>pushButton_7</zorder>
+   <zorder>pushButton_4</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
