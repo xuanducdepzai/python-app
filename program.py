@@ -45,8 +45,8 @@ class Login(QMainWindow):
 
     def login(self):
         msg = Messagebox()
-        email = self.email.text()
-        password = self.password.text()
+        email = self.email.text().strip()
+        password = self.password.text().strip()
 
         if email == "":
             msg.error_box("Email không được bỏ trống")
@@ -63,7 +63,6 @@ class Login(QMainWindow):
             msg.success_box("Đăng nhập thành công")
             self.show_home(user['id'])
             return
-
         msg.error_box("Email hoặc mật khẩu không đúng")
         
     def show_register(self):
@@ -105,10 +104,10 @@ class Register(QMainWindow):
     
     def register(self):
         msg = Messagebox()
-        name = self.name.text()
-        email = self.email.text()
-        password = self.password.text()
-        confirm_password = self.confirm_password.text()
+        name = self.name.text().strip()
+        email = self.email.text().strip()
+        password = self.password.text().strip()
+        confirm_password = self.confirm_password.text().strip()
 
         if email == "":
             msg.error_box("Email không được bỏ trống")
@@ -171,11 +170,14 @@ class Home(QMainWindow):
 
         self.btn_nav_home = self.findChild(QPushButton,"btn_nav_home")
         self.btn_nav_account = self.findChild(QPushButton,"btn_nav_account")
+        self.btn_nav_menu = self.findChild(QPushButton,"btn_nav_menu")
         self.btn_nav_home.clicked.connect(lambda: self.navMainScreen(0))
         self.btn_nav_account.clicked.connect(lambda: self.navMainScreen(1))
+        self.btn_nav_menu.clicked.connect(lambda: self.navMainScreen(2))
         
         self.user_id = user_id
         self.user = get_user_by_id(user_id)
+        self.loadAccountInfo()
 
     def navMainScreen(self,index):
         self.main_widget.setCurrentIndex(index)
@@ -184,6 +186,7 @@ class Home(QMainWindow):
         self.txt_name = self.findChild(QLineEdit,"txt_name")
         self.txt_email = self.findChild(QLineEdit,"txt_email")
 
+        self.btn_nav_account.setText(self.user['name'])
         self.txt_name.setText(self.user['name'])
         self.txt_email.setText(self.user['email'])
 
