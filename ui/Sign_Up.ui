@@ -14,11 +14,11 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLineEdit" name="lineEdit_2">
+   <widget class="QLineEdit" name="txt_password">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>130</y>
+      <x>250</x>
+      <y>180</y>
       <width>211</width>
       <height>51</height>
      </rect>
@@ -35,7 +35,7 @@
     padding: 15px; /* Padding to create space around the text */</string>
     </property>
     <property name="text">
-     <string>password</string>
+     <string>Password</string>
     </property>
     <property name="echoMode">
      <enum>QLineEdit::EchoMode::Normal</enum>
@@ -50,7 +50,7 @@
       <x>230</x>
       <y>30</y>
       <width>241</width>
-      <height>321</height>
+      <height>341</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -80,7 +80,7 @@ color:rgb(255, 255, 255)</string>
      <string>Home</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="btn_login">
     <property name="geometry">
      <rect>
       <x>610</x>
@@ -98,11 +98,11 @@ color:rgb(255, 255, 255)</string>
      <string>Login</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="txt_name">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>70</y>
+      <x>250</x>
+      <y>60</y>
       <width>211</width>
       <height>51</height>
      </rect>
@@ -128,7 +128,7 @@ color:rgb(255, 255, 255)</string>
      <string>Name school</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="btn">
     <property name="geometry">
      <rect>
       <x>550</x>
@@ -150,7 +150,7 @@ border: 2px solid white;</string>
     <property name="geometry">
      <rect>
       <x>290</x>
-      <y>20</y>
+      <y>10</y>
       <width>121</width>
       <height>61</height>
      </rect>
@@ -169,10 +169,10 @@ border: 2px solid white;</string>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>-10</x>
       <y>0</y>
-      <width>711</width>
-      <height>401</height>
+      <width>741</width>
+      <height>441</height>
      </rect>
     </property>
     <property name="text">
@@ -185,11 +185,11 @@ border: 2px solid white;</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_3">
+   <widget class="QLineEdit" name="txt_email">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>190</y>
+      <x>250</x>
+      <y>120</y>
       <width>211</width>
       <height>51</height>
      </rect>
@@ -206,7 +206,7 @@ border: 2px solid white;</string>
     padding: 15px; /* Padding to create space around the text */</string>
     </property>
     <property name="text">
-     <string>anccont bank</string>
+     <string>Email</string>
     </property>
     <property name="echoMode">
      <enum>QLineEdit::EchoMode::Normal</enum>
@@ -215,11 +215,11 @@ border: 2px solid white;</string>
      <string>Email</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="btn_register">
     <property name="geometry">
      <rect>
       <x>260</x>
-      <y>290</y>
+      <y>310</y>
       <width>181</width>
       <height>41</height>
      </rect>
@@ -243,8 +243,8 @@ border-radius:10px;
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>240</y>
+      <x>330</x>
+      <y>280</y>
       <width>141</width>
       <height>41</height>
      </rect>
@@ -263,29 +263,105 @@ color:rgb(255, 255, 255)</string>
      <string>How to make account</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="btn_eye_p">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>190</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: none;
+border: none;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../img/eye-slash-solid.png</normaloff>../img/eye-slash-solid.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txt_confirm_pwd">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>240</y>
+      <width>211</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe Script</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid #cccccc; /* Light gray border */
+    border-radius: 20px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent-like background */
+    padding: 15px; /* Padding to create space around the text */</string>
+    </property>
+    <property name="text">
+     <string>Confinm password</string>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::EchoMode::Normal</enum>
+    </property>
+    <property name="placeholderText">
+     <string>Name - Class</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_eye_cp">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>250</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: none;
+border: none;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../img/eye-slash-solid.png</normaloff>../img/eye-slash-solid.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
+    </property>
+   </widget>
    <zorder>label_5</zorder>
    <zorder>label</zorder>
-   <zorder>lineEdit_2</zorder>
+   <zorder>txt_password</zorder>
    <zorder>pushButton_4</zorder>
-   <zorder>pushButton_3</zorder>
-   <zorder>lineEdit</zorder>
-   <zorder>pushButton_5</zorder>
+   <zorder>btn_login</zorder>
+   <zorder>txt_name</zorder>
+   <zorder>btn</zorder>
    <zorder>label_2</zorder>
-   <zorder>lineEdit_3</zorder>
-   <zorder>pushButton_6</zorder>
+   <zorder>txt_email</zorder>
+   <zorder>btn_register</zorder>
    <zorder>pushButton</zorder>
+   <zorder>btn_eye_p</zorder>
+   <zorder>txt_confirm_pwd</zorder>
+   <zorder>btn_eye_cp</zorder>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>728</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
