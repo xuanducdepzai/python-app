@@ -451,7 +451,7 @@ border-radius:15px</string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="btn_detail">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -1120,7 +1120,7 @@ border-radius:15px</string>
      <zorder>label_9</zorder>
      <zorder>label_7</zorder>
      <zorder>label_13</zorder>
-     <zorder>pushButton_3</zorder>
+     <zorder>btn_detail</zorder>
      <zorder>label_14</zorder>
      <zorder>pushButton_5</zorder>
      <zorder>label_15</zorder>

@@ -171,9 +171,12 @@ class Home(QMainWindow):
         self.btn_nav_home = self.findChild(QPushButton,"btn_nav_home")
         self.btn_nav_account = self.findChild(QPushButton,"btn_nav_account")
         self.btn_nav_menu = self.findChild(QPushButton,"btn_nav_menu")
+        self.btn_detail = self.findChild(QPushButton,"btn_detail")
+
         self.btn_nav_home.clicked.connect(lambda: self.navMainScreen(0))
         self.btn_nav_account.clicked.connect(lambda: self.navMainScreen(1))
         self.btn_nav_menu.clicked.connect(lambda: self.navMainScreen(2))
+        self.btn_detail.clicked.connect(lambda: self.navMainScreen(3))
         
         self.user_id = user_id
         self.user = get_user_by_id(user_id)
