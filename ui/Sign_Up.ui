@@ -17,8 +17,8 @@
    <widget class="QLineEdit" name="txt_password">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>200</y>
+      <x>80</x>
+      <y>220</y>
       <width>211</width>
       <height>51</height>
      </rect>
@@ -82,8 +82,8 @@ color:rgb(255, 255, 255)</string>
    <widget class="QLineEdit" name="txt_name">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>80</y>
+      <x>80</x>
+      <y>100</y>
       <width>211</width>
       <height>51</height>
      </rect>
@@ -130,8 +130,8 @@ border: 2px solid white;</string>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>30</y>
+      <x>130</x>
+      <y>40</y>
       <width>121</width>
       <height>61</height>
      </rect>
@@ -140,37 +140,18 @@ border: 2px solid white;</string>
      <font>
       <family>Segoe Print</family>
       <pointsize>22</pointsize>
-      <bold>false</bold>
+      <bold>true</bold>
      </font>
     </property>
     <property name="text">
      <string>Sign Up</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>-10</x>
-      <y>0</y>
-      <width>741</width>
-      <height>441</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>../img/43.jpg</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
    <widget class="QLineEdit" name="txt_email">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>140</y>
+      <x>80</x>
+      <y>160</y>
       <width>211</width>
       <height>51</height>
      </rect>
@@ -199,8 +180,8 @@ border: 2px solid white;</string>
    <widget class="QPushButton" name="btn_register">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>320</y>
+      <x>80</x>
+      <y>340</y>
       <width>211</width>
       <height>31</height>
      </rect>
@@ -221,24 +202,25 @@ border-radius:10px;
      <string>Sign Up</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="btn_Make_acc">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>350</y>
+      <x>150</x>
+      <y>370</y>
       <width>141</width>
-      <height>41</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Segoe Script</family>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">border: none;
 background: none;
-color:rgb(255, 255, 255)</string>
+color:rgb(0, 0, 0)</string>
     </property>
     <property name="text">
      <string>How to make account</string>
@@ -274,8 +256,8 @@ border: none;</string>
    <widget class="QLineEdit" name="txt_confirm_pwd">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>260</y>
+      <x>80</x>
+      <y>280</y>
       <width>211</width>
       <height>51</height>
      </rect>
@@ -328,6 +310,48 @@ border: none;</string>
      </size>
     </property>
    </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>0</y>
+      <width>351</width>
+      <height>451</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>1080</width>
+      <height>700</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../img/49.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>381</width>
+      <height>471</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>label</zorder>
    <zorder>label_5</zorder>
    <zorder>txt_password</zorder>
    <zorder>pushButton_4</zorder>
@@ -337,7 +361,7 @@ border: none;</string>
    <zorder>label_2</zorder>
    <zorder>txt_email</zorder>
    <zorder>btn_register</zorder>
-   <zorder>pushButton</zorder>
+   <zorder>btn_Make_acc</zorder>
    <zorder>btn_eye_p</zorder>
    <zorder>txt_confirm_pwd</zorder>
    <zorder>btn_eye_cp</zorder>

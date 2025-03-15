@@ -17,7 +17,7 @@
    <widget class="QLineEdit" name="txt_email">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>70</x>
       <y>160</y>
       <width>221</width>
       <height>51</height>
@@ -33,7 +33,7 @@
 border-radius: 20px; /* Rounded corners */
 background-color: rgba(255, 255, 255, 0.1); /* Transparent-like background */
 padding: 15px; /* Padding to create space around the text */
-color: rgb(255, 255, 255);</string>
+</string>
     </property>
     <property name="text">
      <string/>
@@ -84,23 +84,24 @@ color: rgb(255, 255, 255);</string>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>300</y>
+      <x>160</x>
+      <y>310</y>
       <width>131</width>
-      <height>51</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Segoe Script</family>
       <pointsize>10</pointsize>
+      <bold>true</bold>
       <underline>true</underline>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">background: none;
 border: none;
-color:rgb(255, 255, 255)</string>
+color:rgb(33, 33, 33);</string>
     </property>
     <property name="text">
      <string>Forgot password?</string>
@@ -109,7 +110,7 @@ color:rgb(255, 255, 255)</string>
    <widget class="QLineEdit" name="txt_password">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>70</x>
       <y>220</y>
       <width>221</width>
       <height>51</height>
@@ -125,7 +126,7 @@ color:rgb(255, 255, 255)</string>
     border-radius: 20px; /* Rounded corners */
     background-color: rgba(255, 255, 255, 0.1); /* Transparent-like background */
     padding: 15px; /* Padding to create space around the text */
-color: rgb(255, 255, 255);</string>
+color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string/>
@@ -140,8 +141,8 @@ color: rgb(255, 255, 255);</string>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>60</y>
+      <x>130</x>
+      <y>80</y>
       <width>91</width>
       <height>61</height>
      </rect>
@@ -160,9 +161,9 @@ color: rgb(255, 255, 255);</string>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>370</x>
       <y>0</y>
-      <width>721</width>
+      <width>351</width>
       <height>451</height>
      </rect>
     </property>
@@ -176,7 +177,7 @@ color: rgb(255, 255, 255);</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../img/43.jpg</pixmap>
+     <pixmap>../img/49.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -185,7 +186,7 @@ color: rgb(255, 255, 255);</string>
    <widget class="QPushButton" name="btn_login">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>70</x>
       <y>280</y>
       <width>221</width>
       <height>31</height>
@@ -262,7 +263,7 @@ color:rgb(255, 255, 255)</string>
    <widget class="QPushButton" name="btn_eye_p">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>250</x>
       <y>230</y>
       <width>31</width>
       <height>31</height>
@@ -289,8 +290,8 @@ border: none;</string>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>100</y>
+      <x>80</x>
+      <y>110</y>
       <width>211</width>
       <height>61</height>
      </rect>
@@ -306,6 +307,23 @@ border: none;</string>
      <string>Have an Anccount ?</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>-30</y>
+      <width>381</width>
+      <height>471</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>label</zorder>
    <zorder>label_5</zorder>
    <zorder>txt_email</zorder>
    <zorder>label_3</zorder>

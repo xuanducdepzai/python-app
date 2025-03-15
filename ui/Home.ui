@@ -18,9 +18,9 @@
     <property name="geometry">
      <rect>
       <x>-20</x>
-      <y>50</y>
+      <y>60</y>
       <width>811</width>
-      <height>431</height>
+      <height>461</height>
      </rect>
     </property>
     <property name="maximumSize">
@@ -30,7 +30,7 @@
      </size>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="home">
      <widget class="QPushButton" name="btn_nav_menu">
@@ -146,31 +146,11 @@ font: 900 30pt &quot;Segoe UI&quot;;</string>
        <string>The Red Deal</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_6">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>300</y>
-        <width>81</width>
-        <height>91</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>../img/26-removebg-preview.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
      <zorder>label_4</zorder>
      <zorder>label_3</zorder>
      <zorder>btn_nav_menu</zorder>
      <zorder>label_2</zorder>
      <zorder>label</zorder>
-     <zorder>label_6</zorder>
     </widget>
     <widget class="QWidget" name="account">
      <widget class="QLabel" name="label_10">
@@ -178,8 +158,8 @@ font: 900 30pt &quot;Segoe UI&quot;;</string>
        <rect>
         <x>20</x>
         <y>0</y>
-        <width>781</width>
-        <height>411</height>
+        <width>791</width>
+        <height>461</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -193,9 +173,9 @@ font: 900 30pt &quot;Segoe UI&quot;;</string>
       <property name="geometry">
        <rect>
         <x>160</x>
-        <y>10</y>
+        <y>30</y>
         <width>521</width>
-        <height>381</height>
+        <height>371</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -405,7 +385,7 @@ border-radius:10px;</string>
         <x>8</x>
         <y>-5</y>
         <width>1021</width>
-        <height>441</height>
+        <height>501</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -438,7 +418,7 @@ background:rgb(84, 84, 84);</string>
      <widget class="QLabel" name="label_9">
       <property name="geometry">
        <rect>
-        <x>40</x>
+        <x>30</x>
         <y>50</y>
         <width>391</width>
         <height>351</height>
@@ -455,7 +435,7 @@ border-radius:15px</string>
      <widget class="QLabel" name="label_13">
       <property name="geometry">
        <rect>
-        <x>50</x>
+        <x>40</x>
         <y>60</y>
         <width>371</width>
         <height>271</height>
@@ -498,7 +478,7 @@ border:none</string>
      <widget class="QLabel" name="label_14">
       <property name="geometry">
        <rect>
-        <x>450</x>
+        <x>440</x>
         <y>60</y>
         <width>161</width>
         <height>101</height>
@@ -517,7 +497,7 @@ border:none</string>
      <widget class="QPushButton" name="pushButton_5">
       <property name="geometry">
        <rect>
-        <x>600</x>
+        <x>590</x>
         <y>40</y>
         <width>161</width>
         <height>51</height>
@@ -737,116 +717,11 @@ border:none</string>
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QWidget" name="widget_4" native="true">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>171</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <widget class="QLabel" name="label_35">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>10</y>
-          <width>31</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap>../img/34.svg</pixmap>
-        </property>
-        <property name="scaledContents">
-         <bool>true</bool>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_36">
-        <property name="geometry">
-         <rect>
-          <x>40</x>
-          <y>10</y>
-          <width>31</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap>../img/34.svg</pixmap>
-        </property>
-        <property name="scaledContents">
-         <bool>true</bool>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_37">
-        <property name="geometry">
-         <rect>
-          <x>130</x>
-          <y>10</y>
-          <width>31</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap>../img/33.svg</pixmap>
-        </property>
-        <property name="scaledContents">
-         <bool>true</bool>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_38">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>31</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap>../img/34.svg</pixmap>
-        </property>
-        <property name="scaledContents">
-         <bool>true</bool>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_39">
-        <property name="geometry">
-         <rect>
-          <x>100</x>
-          <y>10</y>
-          <width>31</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap>../img/34.svg</pixmap>
-        </property>
-        <property name="scaledContents">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </widget>
      </widget>
      <widget class="QLabel" name="label_20">
       <property name="geometry">
        <rect>
-        <x>450</x>
+        <x>440</x>
         <y>190</y>
         <width>161</width>
         <height>101</height>
@@ -865,7 +740,7 @@ border:none</string>
      <widget class="QLabel" name="label_21">
       <property name="geometry">
        <rect>
-        <x>450</x>
+        <x>440</x>
         <y>320</y>
         <width>161</width>
         <height>101</height>
@@ -1166,9 +1041,9 @@ border:none</string>
      <widget class="QLabel" name="label_64">
       <property name="geometry">
        <rect>
-        <x>440</x>
+        <x>430</x>
         <y>50</y>
-        <width>351</width>
+        <width>371</width>
         <height>121</height>
        </rect>
       </property>
@@ -1183,9 +1058,9 @@ border-radius:15px</string>
      <widget class="QLabel" name="label_65">
       <property name="geometry">
        <rect>
-        <x>440</x>
+        <x>430</x>
         <y>180</y>
-        <width>361</width>
+        <width>371</width>
         <height>121</height>
        </rect>
       </property>
@@ -1224,10 +1099,10 @@ border:none</string>
      <widget class="QLabel" name="label_66">
       <property name="geometry">
        <rect>
-        <x>440</x>
+        <x>430</x>
         <y>310</y>
-        <width>361</width>
-        <height>111</height>
+        <width>371</width>
+        <height>121</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1302,8 +1177,8 @@ border-radius:15px</string>
      <widget class="QWidget" name="star" native="true">
       <property name="geometry">
        <rect>
-        <x>130</x>
-        <y>50</y>
+        <x>120</x>
+        <y>60</y>
         <width>161</width>
         <height>41</height>
        </rect>
@@ -1407,8 +1282,8 @@ border-radius:15px</string>
      <widget class="QLabel" name="label_50">
       <property name="geometry">
        <rect>
-        <x>290</x>
-        <y>50</y>
+        <x>280</x>
+        <y>70</y>
         <width>49</width>
         <height>31</height>
        </rect>
@@ -1653,7 +1528,7 @@ border-radius:15px</string>
       <x>590</x>
       <y>0</y>
       <width>151</width>
-      <height>41</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -1683,8 +1558,8 @@ border: none;</string>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>0</y>
+      <x>480</x>
+      <y>10</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -1712,8 +1587,8 @@ border: 2px solid back;
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>0</y>
+      <x>220</x>
+      <y>10</y>
       <width>291</width>
       <height>41</height>
      </rect>
@@ -1732,22 +1607,22 @@ border: 2px solid back;
 </string>
     </property>
     <property name="text">
-     <string>Enter the formula you want to find</string>
+     <string/>
     </property>
     <property name="echoMode">
      <enum>QLineEdit::EchoMode::Normal</enum>
     </property>
     <property name="placeholderText">
-     <string>Usename</string>
+     <string>Enter the formula you want to find</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_nav_home">
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>0</y>
-      <width>41</width>
-      <height>41</height>
+      <y>10</y>
+      <width>31</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -1818,17 +1693,6 @@ border-radius:15px;</string>
    <zorder>lineEdit</zorder>
    <zorder>btn_nav_home</zorder>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>784</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
