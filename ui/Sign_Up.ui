@@ -14,36 +14,6 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLineEdit" name="txt_password">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>220</y>
-      <width>211</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Segoe Script</family>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border: 1px solid #cccccc; /* Light gray border */
-    border-radius: 20px; /* Rounded corners */
-    background-color: rgba(255, 255, 255, 0.1); /* Transparent-like background */
-    padding: 15px; /* Padding to create space around the text */</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="echoMode">
-     <enum>QLineEdit::EchoMode::Normal</enum>
-    </property>
-    <property name="placeholderText">
-     <string>password</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
@@ -79,36 +49,6 @@ color:rgb(255, 255, 255)</string>
      <string>Login</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="txt_name">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>100</y>
-      <width>211</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Segoe Script</family>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border: 1px solid #cccccc; /* Light gray border */
-    border-radius: 20px; /* Rounded corners */
-    background-color: rgba(255, 255, 255, 0.1); /* Transparent-like background */
-    padding: 15px; /* Padding to create space around the text */</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="echoMode">
-     <enum>QLineEdit::EchoMode::Normal</enum>
-    </property>
-    <property name="placeholderText">
-     <string>Name </string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="btn">
     <property name="geometry">
      <rect>
@@ -127,112 +67,13 @@ border: 2px solid white;</string>
      <string>Sign up</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>40</y>
-      <width>121</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Segoe Print</family>
-      <pointsize>22</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Sign Up</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="txt_email">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>160</y>
-      <width>211</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Segoe Script</family>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border: 1px solid #cccccc; /* Light gray border */
-    border-radius: 20px; /* Rounded corners */
-    background-color: rgba(255, 255, 255, 0.1); /* Transparent-like background */
-    padding: 15px; /* Padding to create space around the text */</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="echoMode">
-     <enum>QLineEdit::EchoMode::Normal</enum>
-    </property>
-    <property name="placeholderText">
-     <string>Email</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_register">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>340</y>
-      <width>211</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Segoe Print</family>
-      <pointsize>16</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color:rgb(255, 255, 255);
-background: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 #87CEFA, stop:1 #4682B4);
-border-radius:10px;
-</string>
-    </property>
-    <property name="text">
-     <string>Sign Up</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_Make_acc">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>370</y>
-      <width>141</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Segoe Script</family>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border: none;
-background: none;
-color:rgb(0, 0, 0)</string>
-    </property>
-    <property name="text">
-     <string>How to make account</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="btn_eye_p">
     <property name="geometry">
      <rect>
-      <x>420</x>
+      <x>270</x>
       <y>220</y>
-      <width>31</width>
-      <height>31</height>
+      <width>41</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -253,43 +94,13 @@ border: none;</string>
      </size>
     </property>
    </widget>
-   <widget class="QLineEdit" name="txt_confirm_pwd">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>280</y>
-      <width>211</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Segoe Script</family>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border: 1px solid #cccccc; /* Light gray border */
-    border-radius: 20px; /* Rounded corners */
-    background-color: rgba(255, 255, 255, 0.1); /* Transparent-like background */
-    padding: 15px; /* Padding to create space around the text */</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="echoMode">
-     <enum>QLineEdit::EchoMode::Normal</enum>
-    </property>
-    <property name="placeholderText">
-     <string>confirm_password</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="btn_eye_cp">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>270</y>
-      <width>31</width>
-      <height>31</height>
+      <x>270</x>
+      <y>280</y>
+      <width>41</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -313,9 +124,9 @@ border: none;</string>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>380</x>
+      <x>370</x>
       <y>0</y>
-      <width>351</width>
+      <width>361</width>
       <height>451</height>
      </rect>
     </property>
@@ -338,7 +149,7 @@ border: none;</string>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>-10</x>
       <y>0</y>
       <width>381</width>
       <height>471</height>
@@ -351,20 +162,198 @@ border: none;</string>
      <string/>
     </property>
    </widget>
+   <widget class="QWidget" name="gridWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>40</y>
+      <width>251</width>
+      <height>381</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="3" column="0">
+      <widget class="QLineEdit" name="txt_email">
+       <property name="font">
+        <font>
+         <family>Segoe Script</family>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid #cccccc; /* Light gray border */
+    border-radius: 20px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent-like background */
+    padding: 15px; /* Padding to create space around the text */</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::EchoMode::Normal</enum>
+       </property>
+       <property name="placeholderText">
+        <string>Email</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLineEdit" name="txt_password">
+       <property name="font">
+        <font>
+         <family>Segoe Script</family>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid #cccccc; /* Light gray border */
+    border-radius: 20px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent-like background */
+    padding: 15px; /* Padding to create space around the text */</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::EchoMode::Password</enum>
+       </property>
+       <property name="placeholderText">
+        <string>Password</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLineEdit" name="txt_confirm_pwd">
+       <property name="font">
+        <font>
+         <family>Segoe Script</family>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid #cccccc; /* Light gray border */
+    border-radius: 20px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent-like background */
+    padding: 15px; /* Padding to create space around the text */</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::EchoMode::Password</enum>
+       </property>
+       <property name="placeholderText">
+        <string>Confirm password</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QPushButton" name="btn_register">
+       <property name="font">
+        <font>
+         <family>Segoe Print</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:rgb(255, 255, 255);
+background: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 #87CEFA, stop:1 #4682B4);
+border-radius:10px;
+</string>
+       </property>
+       <property name="text">
+        <string>Sign Up</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLineEdit" name="txt_name">
+       <property name="font">
+        <font>
+         <family>Segoe Script</family>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid #cccccc; /* Light gray border */
+    border-radius: 20px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent-like background */
+    padding: 15px; /* Padding to create space around the text */</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::EchoMode::Normal</enum>
+       </property>
+       <property name="placeholderText">
+        <string>Name </string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QWidget" name="widget" native="true">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>80</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_Make_acc">
+          <property name="font">
+           <font>
+            <family>Segoe Script</family>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: none;
+background: none;
+color:rgb(0, 0, 0)</string>
+          </property>
+          <property name="text">
+           <string>How to make account</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="font">
+        <font>
+         <family>Segoe Print</family>
+         <pointsize>22</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Sign Up</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
    <zorder>label</zorder>
    <zorder>label_5</zorder>
-   <zorder>txt_password</zorder>
    <zorder>pushButton_4</zorder>
    <zorder>btn_login</zorder>
-   <zorder>txt_name</zorder>
    <zorder>btn</zorder>
-   <zorder>label_2</zorder>
-   <zorder>txt_email</zorder>
-   <zorder>btn_register</zorder>
-   <zorder>btn_Make_acc</zorder>
-   <zorder>btn_eye_p</zorder>
-   <zorder>txt_confirm_pwd</zorder>
+   <zorder>gridWidget</zorder>
    <zorder>btn_eye_cp</zorder>
+   <zorder>btn_eye_p</zorder>
   </widget>
  </widget>
  <resources/>

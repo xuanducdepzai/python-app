@@ -14,7 +14,7 @@ def connect_db():
 def create_user(name,email,password):
     conn = connect_db()
     cursor = conn.cursor()
-    cursor.execute("INSERT INTO users (name,email,password) VALUES (?,?,?)",(name,email,password))
+    cursor.execute("INSERT INTO users (name,email,password) VALUES (?,?,?)",(name,email,password,))
     conn.commit()
     conn.close()
 
@@ -41,6 +41,30 @@ def get_user_by_email_and_password(email, password):
     user = cursor.fetchone()
     conn.close()
     return user
+
+def update_user_avatar(user_id, avatar):
+    conn = connect_db()
+    cursor = conn.cursor()
+    cursor.row_factory = dict_factory
+    cursor.execute("UPDATE users SET avatar=? WHERE id=?", (avatar, user_id))
+    conn.commit()
+    conn.close()
+
+def upadate_user(user_id,name):
+    conn = connect_db()
+    cursor = conn.cursor()
+    cursor.row_factory = dict_factory
+    cursor.execute("Upadte users UPDATE name = ? WHErE id = ?",(name,user_id))
+    conn.commit()
+    conn.close
+
+def upadate_gender(user_id,gender):
+    conn = connect_db()
+    cursor = conn.cursor()
+    cursor.row_factory = dict_factory
+    cursor.execute("Upadte users UPDATE gender = ? WHErE id = ?",(gender,user_id))
+    conn.commit()
+    conn.close
 
 # create_user("jon","hell","lala")
 print(get_user_by_id(2))

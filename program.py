@@ -25,9 +25,9 @@ class Login(QMainWindow):
         super().__init__()
         uic.loadUi("ui/loggin.ui",self)
 
-        self.email = self.findChild(QLineEdit,"txt_email")
-        self.password = self.findChild(QLineEdit,"txt_password")
-        self.btn_login = self.findChild(QPushButton,"btn_login")
+        self.email = self.findChild(QLineEdit,"txt_email_2")
+        self.password = self.findChild(QLineEdit,"txt_password_3")
+        self.btn_login = self.findChild(QPushButton,"btn_login_2")
         self.btn_register = self.findChild(QPushButton,"btn_register")
         self.btn_eye_p = self.findChild(QPushButton,"btn_eye_p")
 
@@ -163,7 +163,10 @@ class Register(QMainWindow):
 class Home(QMainWindow):
     def __init__(self,user_id):
         super().__init__()
-        uic.loadUi("ui/home.ui",self)
+        uic.loadUi("ui/Home.ui",self)
+
+        self.user_id = user_id
+        self.user = get_user_by_id(user_id)
         
         self.main_widget = self.findChild(QStackedWidget,"main_widget")
         self.main_widget.setCurrentIndex(0)
@@ -172,14 +175,15 @@ class Home(QMainWindow):
         self.btn_nav_account = self.findChild(QPushButton,"btn_nav_account")
         self.btn_nav_menu = self.findChild(QPushButton,"btn_nav_menu")
         self.btn_detail = self.findChild(QPushButton,"btn_detail")
+        self.avatar = self.findChild(QLabel,"avatar")
+        self.btn_avatar = self.findChild(QPushButton,"btn_nav_avatar")
+        self.btn_avatar.clicked.connect(self.update_avatar  )
 
         self.btn_nav_home.clicked.connect(lambda: self.navMainScreen(0))
         self.btn_nav_account.clicked.connect(lambda: self.navMainScreen(1))
         self.btn_nav_menu.clicked.connect(lambda: self.navMainScreen(2))
         self.btn_detail.clicked.connect(lambda: self.navMainScreen(3))
         
-        self.user_id = user_id
-        self.user = get_user_by_id(user_id)
         self.loadAccountInfo()
 
     def navMainScreen(self,index):
@@ -192,6 +196,18 @@ class Home(QMainWindow):
         self.btn_nav_account.setText(self.user['name'])
         self.txt_name.setText(self.user['name'])
         self.txt_email.setText(self.user['email'])
+        if not self.user_ == ["avatar"]:
+            self.btn_avatar.setIcon(QIcon("avatar"))
+            self.avatar.pixmap(QPixmap("avatar"))
+
+    def update_avatar(self):
+        file,_ = QFileDialog.getOpenFileName(self, "Select image", "", "Images Files(*.png *.jpg *.jpeg *.bmp)")
+        if file:
+            self.user["avatar"] = file
+            self.btn_avatar.setIcon(QIcon(file))
+            self.avatar.pixmap(QPixmap(file))    
+            update_user_avatar(self.user_id, file)
+            
 
 if __name__ == "__main__":
     app = QApplication([])
