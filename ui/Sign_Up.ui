@@ -23,6 +23,12 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">border-radius:5px;
 color:rgb(255, 255, 255)</string>
@@ -39,6 +45,12 @@ color:rgb(255, 255, 255)</string>
       <width>81</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">border-radius:5px;
@@ -57,6 +69,12 @@ color:rgb(255, 255, 255)</string>
       <width>71</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">border-radius:10px;
@@ -176,7 +194,9 @@ border: none;</string>
       <widget class="QLineEdit" name="txt_email">
        <property name="font">
         <font>
-         <family>Segoe Script</family>
+         <family>Segoe UI</family>
+         <pointsize>10</pointsize>
+         <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
@@ -200,7 +220,9 @@ border: none;</string>
       <widget class="QLineEdit" name="txt_password">
        <property name="font">
         <font>
-         <family>Segoe Script</family>
+         <family>Segoe UI</family>
+         <pointsize>10</pointsize>
+         <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
@@ -224,7 +246,9 @@ border: none;</string>
       <widget class="QLineEdit" name="txt_confirm_pwd">
        <property name="font">
         <font>
-         <family>Segoe Script</family>
+         <family>Segoe UI</family>
+         <pointsize>10</pointsize>
+         <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
@@ -248,8 +272,9 @@ border: none;</string>
       <widget class="QPushButton" name="btn_register">
        <property name="font">
         <font>
-         <family>Segoe Print</family>
-         <pointsize>16</pointsize>
+         <family>Segoe UI</family>
+         <pointsize>20</pointsize>
+         <bold>false</bold>
         </font>
        </property>
        <property name="styleSheet">
@@ -267,7 +292,9 @@ border-radius:10px;
       <widget class="QLineEdit" name="txt_name">
        <property name="font">
         <font>
-         <family>Segoe Script</family>
+         <family>Segoe UI</family>
+         <pointsize>10</pointsize>
+         <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
@@ -300,7 +327,7 @@ border-radius:10px;
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>80</width>
+            <width>70</width>
             <height>20</height>
            </size>
           </property>
@@ -310,7 +337,8 @@ border-radius:10px;
          <widget class="QPushButton" name="btn_Make_acc">
           <property name="font">
            <font>
-            <family>Segoe Script</family>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
             <bold>true</bold>
            </font>
           </property>
@@ -331,8 +359,8 @@ color:rgb(0, 0, 0)</string>
       <widget class="QLabel" name="label_2">
        <property name="font">
         <font>
-         <family>Segoe Print</family>
-         <pointsize>22</pointsize>
+         <family>Segoe UI</family>
+         <pointsize>26</pointsize>
          <bold>true</bold>
         </font>
        </property>

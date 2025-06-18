@@ -119,16 +119,31 @@ class Register(QMainWindow):
             self.name.setFocus()
             return
         
+        if any(c in "@!#$%^&*()~><?/:'\"{}" for c in name):
+            msg.error_box("Tên không được có các kí tự đặc biệt")
+            self.name.setFocus()
+            return
+    
         if password == "":
-            msg.error_box("Mật khẩu hông được bỏ trống")
+            msg.error_box("Mật khẩu không được bỏ trống")
             self.password.setFocus()
             return
         
+#        if len(password.split()) < 6:
+#            msg.error_box("Mật khẩu phải có tối thiểu 6 ký tự")
+#            self.password.setFocus()
+#            return
+
+#        if len(password.split()) > 14:
+#            msg.error_box("Mật khẩu chỉ có tối đa 14 ký tự")
+#            self.password.setFocus()
+#            return
+
         if confirm_password == "":
             msg.error_box("Xác nhận mật khẩu không được để trống")
             self.confirm_password.setFocus()
             return
-        
+              
         if password != confirm_password:
             msg.error_box("Mật khẩu không trùng")
             self.password.setFocus()

@@ -166,6 +166,34 @@ font: 900 30pt &quot;Segoe UI&quot;;</string>
        <enum>Qt::LayoutDirection::RightToLeft</enum>
       </property>
       <layout class="QGridLayout" name="gridLayout">
+       <item row="3" column="0">
+        <widget class="QLineEdit" name="txt_email">
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>14</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-color : rgb(0, 0, 0);
+border: 2px solid back;
+    border-radius: 10px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent-like background */
+    padding: 10px
+</string>
+         </property>
+         <property name="text">
+          <string>Email: xuanduy.nhathong@gmail.com</string>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::EchoMode::Normal</enum>
+         </property>
+         <property name="placeholderText">
+          <string>Usename</string>
+         </property>
+        </widget>
+       </item>
        <item row="1" column="0">
         <widget class="QPushButton" name="btn_nav_avatar">
          <property name="font">
@@ -194,11 +222,10 @@ border: none;</string>
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QLineEdit" name="txt_name">
+        <widget class="QLineEdit" name="lineEdit_2">
          <property name="font">
           <font>
-           <family>Segoe Script</family>
-           <pointsize>12</pointsize>
+           <pointsize>14</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -213,46 +240,15 @@ border: 2px solid back;
          <property name="text">
           <string>Name: Xuân Đức</string>
          </property>
-         <property name="echoMode">
-          <enum>QLineEdit::EchoMode::Normal</enum>
-         </property>
-         <property name="placeholderText">
-          <string>Usename</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLineEdit" name="txt_email">
-         <property name="font">
-          <font>
-           <family>Segoe Script</family>
-           <pointsize>12</pointsize>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">border-color : rgb(0, 0, 0);
-border: 2px solid back;
-    border-radius: 10px; /* Rounded corners */
-    background-color: rgba(255, 255, 255, 0.1); /* Transparent-like background */
-    padding: 10px
-</string>
-         </property>
-         <property name="text">
-          <string>Email: xuanduy.nhathong@gmail.com</string>
-         </property>
-         <property name="echoMode">
-          <enum>QLineEdit::EchoMode::Normal</enum>
-         </property>
-         <property name="placeholderText">
-          <string>Usename</string>
+         <property name="readOnly">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
       </layout>
-      <zorder>txt_name</zorder>
       <zorder>txt_email</zorder>
       <zorder>btn_nav_avatar</zorder>
+      <zorder>lineEdit_2</zorder>
      </widget>
      <widget class="QLabel" name="label_10">
       <property name="geometry">
@@ -262,6 +258,12 @@ border: 2px solid back;
         <width>791</width>
         <height>461</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Segoe UI</family>
+        <pointsize>14</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">background:rgb(13, 20, 36);</string>
@@ -275,7 +277,7 @@ border: 2px solid back;
        <rect>
         <x>150</x>
         <y>30</y>
-        <width>521</width>
+        <width>531</width>
         <height>371</height>
        </rect>
       </property>
@@ -326,8 +328,8 @@ border: 2px solid back;
        </property>
        <property name="font">
         <font>
-         <family>VNI-Revue</family>
-         <pointsize>12</pointsize>
+         <family>Segoe UI</family>
+         <pointsize>18</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -346,8 +348,8 @@ border: 2px solid back;
        </property>
        <property name="font">
         <font>
-         <family>VNI-Awchon</family>
-         <pointsize>14</pointsize>
+         <family>Segoe UI</family>
+         <pointsize>18</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -356,10 +358,38 @@ border: 2px solid back;
        </property>
       </widget>
      </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>180</y>
+        <width>51</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: none;
+border:none</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../img/56.png</normaloff>../img/56.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>38</width>
+        <height>48</height>
+       </size>
+      </property>
+     </widget>
      <zorder>label_10</zorder>
      <zorder>label_11</zorder>
      <zorder>gridWidget</zorder>
      <zorder>groupBox</zorder>
+     <zorder>pushButton</zorder>
     </widget>
     <widget class="QWidget" name="menu">
      <widget class="QLabel" name="label_5">
@@ -1520,6 +1550,7 @@ border-radius:10px</string>
     <property name="font">
      <font>
       <pointsize>18</pointsize>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
@@ -1603,8 +1634,8 @@ border: 2px solid back;
      <rect>
       <x>90</x>
       <y>10</y>
-      <width>31</width>
-      <height>31</height>
+      <width>41</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">

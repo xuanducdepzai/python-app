@@ -65,6 +65,11 @@
       <height>700</height>
      </size>
     </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+     </font>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -84,6 +89,12 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">border-radius:10px;
 border: 2px solid white;
@@ -96,11 +107,17 @@ color:rgb(255, 255, 255)</string>
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>490</x>
+      <x>480</x>
       <y>20</y>
       <width>81</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">border-radius:5px;
@@ -115,9 +132,15 @@ color:rgb(255, 255, 255)</string>
      <rect>
       <x>540</x>
       <y>20</y>
-      <width>81</width>
+      <width>71</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">border-radius:5px;
@@ -188,7 +211,7 @@ border: none;</string>
       <widget class="QLineEdit" name="txt_email_2">
        <property name="font">
         <font>
-         <family>Segoe Script</family>
+         <family>Segoe UI</family>
         </font>
        </property>
        <property name="styleSheet">
@@ -216,7 +239,7 @@ padding: 15px; /* Padding to create space around the text */
       <widget class="QLineEdit" name="txt_password_3">
        <property name="font">
         <font>
-         <family>Segoe Script</family>
+         <family>Segoe UI</family>
         </font>
        </property>
        <property name="styleSheet">
@@ -241,8 +264,8 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_7">
        <property name="font">
         <font>
-         <family>Segoe Script</family>
-         <pointsize>14</pointsize>
+         <family>Segoe UI</family>
+         <pointsize>18</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -261,7 +284,7 @@ color: rgb(0, 0, 0);</string>
       <widget class="QPushButton" name="btn_login_2">
        <property name="font">
         <font>
-         <family>Segoe Script</family>
+         <family>Segoe UI</family>
          <pointsize>16</pointsize>
         </font>
        </property>
@@ -280,8 +303,8 @@ border-radius:10px;
       <widget class="QLabel" name="label_2">
        <property name="font">
         <font>
-         <family>Segoe Script</family>
-         <pointsize>22</pointsize>
+         <family>Segoe UI</family>
+         <pointsize>26</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -319,7 +342,7 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_4">
           <property name="font">
            <font>
-            <family>Segoe Script</family>
+            <family>Segoe UI</family>
             <pointsize>10</pointsize>
             <bold>true</bold>
             <underline>true</underline>
