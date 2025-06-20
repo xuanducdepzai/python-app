@@ -304,7 +304,7 @@ border-radius:10px;
        <property name="font">
         <font>
          <family>Segoe UI</family>
-         <pointsize>26</pointsize>
+         <pointsize>28</pointsize>
          <bold>true</bold>
         </font>
        </property>
