@@ -179,6 +179,8 @@ class Home(QMainWindow):
     def __init__(self,user_id):
         super().__init__()
         uic.loadUi("ui/Home.ui",self)
+        
+        self.loadAccountInfo()
 
         self.user_id = user_id
         self.user = get_user_by_id(user_id)
@@ -199,7 +201,7 @@ class Home(QMainWindow):
         self.btn_nav_menu.clicked.connect(lambda: self.navMainScreen(2))
         self.btn_detail.clicked.connect(lambda: self.navMainScreen(3))
         
-        self.loadAccountInfo()
+        
 
     def navMainScreen(self,index):
         self.main_widget.setCurrentIndex(index)
@@ -207,8 +209,7 @@ class Home(QMainWindow):
     def loadAccountInfo(self):
         self.txt_name = self.findChild(QLineEdit,"txt_name")
         self.txt_email = self.findChild(QLineEdit,"txt_email")
-
-        self.btn_nav_account.setText(self.user['name'])
+        
         self.txt_name.setText(self.user['name'])
         self.txt_email.setText(self.user['email'])
         if not self.user_ == ["avatar"]:

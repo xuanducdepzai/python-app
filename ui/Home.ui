@@ -42,6 +42,12 @@
         <height>41</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="styleSheet">
        <string notr="true">border: 2px solid white;
 border-radius:15px;
@@ -75,22 +81,22 @@ color:rgb(255, 255, 255);
       <property name="geometry">
        <rect>
         <x>250</x>
-        <y>200</y>
-        <width>331</width>
+        <y>220</y>
+        <width>371</width>
         <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Segoe UI</family>
-        <pointsize>17</pointsize>
+        <pointsize>19</pointsize>
         <italic>false</italic>
         <fontweight>DemiBold</fontweight>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color:rgb(255, 255, 255);
-font: 600 17pt &quot;Segoe UI&quot;;</string>
+font: 600 19pt &quot;Segoe UI&quot;;</string>
       </property>
       <property name="text">
        <string>Recipes are ready to learn now!</string>
@@ -99,8 +105,8 @@ font: 600 17pt &quot;Segoe UI&quot;;</string>
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>160</y>
+        <x>270</x>
+        <y>180</y>
         <width>321</width>
         <height>41</height>
        </rect>
@@ -108,14 +114,14 @@ font: 600 17pt &quot;Segoe UI&quot;;</string>
       <property name="font">
        <font>
         <family>Segoe UI</family>
-        <pointsize>30</pointsize>
+        <pointsize>34</pointsize>
         <italic>false</italic>
         <fontweight>Black</fontweight>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color:rgb(255, 255, 255);
-font: 900 30pt &quot;Segoe UI&quot;;</string>
+font: 900 34pt &quot;Segoe UI&quot;;</string>
       </property>
       <property name="text">
        <string>on Asian Food</string>
@@ -125,7 +131,7 @@ font: 900 30pt &quot;Segoe UI&quot;;</string>
       <property name="geometry">
        <rect>
         <x>290</x>
-        <y>120</y>
+        <y>130</y>
         <width>271</width>
         <height>41</height>
        </rect>
@@ -133,14 +139,14 @@ font: 900 30pt &quot;Segoe UI&quot;;</string>
       <property name="font">
        <font>
         <family>Segoe UI</family>
-        <pointsize>30</pointsize>
+        <pointsize>32</pointsize>
         <italic>false</italic>
         <fontweight>Black</fontweight>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color:rgb(255, 255, 255);
-font: 900 30pt &quot;Segoe UI&quot;;</string>
+font: 900 32pt &quot;Segoe UI&quot;;</string>
       </property>
       <property name="text">
        <string>The Red Deal</string>
@@ -222,7 +228,7 @@ border: none;</string>
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QLineEdit" name="lineEdit_2">
+        <widget class="QLineEdit" name="txt_name">
          <property name="font">
           <font>
            <pointsize>14</pointsize>
@@ -246,9 +252,6 @@ border: 2px solid back;
         </widget>
        </item>
       </layout>
-      <zorder>txt_email</zorder>
-      <zorder>btn_nav_avatar</zorder>
-      <zorder>lineEdit_2</zorder>
      </widget>
      <widget class="QLabel" name="label_10">
       <property name="geometry">
