@@ -50,11 +50,19 @@ def update_user_avatar(user_id, avatar):
     conn.commit()
     conn.close()
 
-def upadate_user(user_id,name):
+def update_user_password(user_id,password):
     conn = connect_db()
     cursor = conn.cursor()
     cursor.row_factory = dict_factory
-    cursor.execute("Upadte users UPDATE name = ? WHErE id = ?",(name,user_id))
+    cursor.execute("UPDATE users SET avatar=? WHERE id=?", (password, user_id))
+    conn.commit()
+    conn.close()
+
+def upadate_user(user_id,name,password):
+    conn = connect_db()
+    cursor = conn.cursor()
+    cursor.row_factory = dict_factory
+    cursor.execute("Upadte users UPDATE name = ?,user_id = ?,password = ? WHErE id = ?",(name,user_id,password))
     conn.commit()
     conn.close
 
@@ -66,6 +74,3 @@ def upadate_gender(user_id,gender):
     conn.commit()
     conn.close
 
-# create_user("jon","hell","lala")
-print(get_user_by_id(2))
-print(get_user_by_email("hell"))

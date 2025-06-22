@@ -176,15 +176,23 @@ class Register(QMainWindow):
         self.close()
         
 class Home(QMainWindow):
-    def __init__(self,user_id):
+    def __init__(self,user):
         super().__init__()
         uic.loadUi("ui/Home.ui",self)
         
+        self.user_id = user
+        self.msg = Messagebox()
+        
+        self.user = get_user_by_id(user)
         self.loadAccountInfo()
 
-        self.user_id = user_id
-        self.user = get_user_by_id(user_id)
-        
+        self.txt_name = self.findChild(QLineEdit,"txt_name")
+        self.txt_name.returnPressed.connect(lambda:self.finish_editing_name)
+        self.txt_email = self.findChild(QLineEdit,"txt_email")
+        self.txt_password = self.findChild(QLineEdit,"txt_password")
+        self.txt_password.returnPressed.connect(lambda:self.finish_editing_password)
+        self.txt_gender = self.findChild(QLineEdit,"cb_gender")
+
         self.main_widget = self.findChild(QStackedWidget,"main_widget")
         self.main_widget.setCurrentIndex(0)
 
@@ -193,8 +201,14 @@ class Home(QMainWindow):
         self.btn_nav_menu = self.findChild(QPushButton,"btn_nav_menu")
         self.btn_detail = self.findChild(QPushButton,"btn_detail")
         self.avatar = self.findChild(QLabel,"avatar")
-        self.btn_avatar = self.findChild(QPushButton,"btn_nav_avatar")
-        self.btn_avatar.clicked.connect(self.update_avatar  )
+        self.btn_avatar = self.findChild(QPushButton,"btn_avatar")
+        self.btn_avatar.clicked.connect(lambda:self.update_avatar )
+
+        self.btn_up_name = self.findChild(QPushButton,"btn_up_name")
+        self.btn_up_name.clicked.connect(lambda:self.unlock_editing_name)
+
+        self.btn_up_password = self.findChild(QPushButton,"btn_up_password")
+        self.btn_up_password.clicked.connect(lambda:self.unlock_editing_password)
 
         self.btn_nav_home.clicked.connect(lambda: self.navMainScreen(0))
         self.btn_nav_account.clicked.connect(lambda: self.navMainScreen(1))
@@ -202,6 +216,28 @@ class Home(QMainWindow):
         self.btn_detail.clicked.connect(lambda: self.navMainScreen(3))
         
         
+    def unlock_editing_name(self):
+        self.txt_name.setReadOnly(False)
+        self.txt_name.setFocus()
+        self.txt_name.selectAll()
+
+    def finish_editing_name(self):
+        new_name = self.txt_name.text()
+        self.txt_name.setReadOnly(True)
+        self.msg.success_box("Đã sửa thành công tên")
+        return new_name
+    
+    def unlock_editing_password(self):
+        self.txt_password.setReadOnly(False)
+        self.txt_password.setFocus()
+        self.txt_password.selectAll()
+
+    def finish_editing_password(self):
+        password = self.txt_password.text()
+        self.txt_password.setReadOnly(True)
+        self.msg.success_box("Đã sửa thành công mật khẩu")
+        update_user_password(self.user_id,password)
+        return password
 
     def navMainScreen(self,index):
         self.main_widget.setCurrentIndex(index)
@@ -209,19 +245,32 @@ class Home(QMainWindow):
     def loadAccountInfo(self):
         self.txt_name = self.findChild(QLineEdit,"txt_name")
         self.txt_email = self.findChild(QLineEdit,"txt_email")
-        
-        self.txt_name.setText(self.user['name'])
-        self.txt_email.setText(self.user['email'])
-        if not self.user_ == ["avatar"]:
-            self.btn_avatar.setIcon(QIcon("avatar"))
-            self.avatar.pixmap(QPixmap("avatar"))
+        self.txt_name = self.findChild(QLineEdit,"txt_password")
 
+        self.txt_name.setText(self.user['name'])
+        self.txt_password.setText(self.user['password'])
+        self.txt_email.setText(self.user['email'])
+    
+        if self.user["avatar"]:
+            self.btn_avatar.setIcon(QIcon("avatar"))
+            self.avatar.setPixmap(QPixmap("avatar"))
+            self.avatar.setScaledContents(True)
+        
+        if not self.user["gender"]:
+            self.cb_gender.setCurrentIndex(3)
+        elif self.user["gender"] == "Male":
+            self.cb_gender.setCurrentIndex(1)
+        elif self.user["gender"] == "Female":
+            self.cb_gender.setCurrentIndex(2)
+        else:
+            self.cb_gender.setCurrentIndex(3)
+        
     def update_avatar(self):
         file,_ = QFileDialog.getOpenFileName(self, "Select image", "", "Images Files(*.png *.jpg *.jpeg *.bmp)")
         if file:
             self.user["avatar"] = file
             self.btn_avatar.setIcon(QIcon(file))
-            self.avatar.pixmap(QPixmap(file))    
+            self.avatar.setPixmap(QPixmap(file))    
             update_user_avatar(self.user_id, file)
             
 
