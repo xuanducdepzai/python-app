@@ -187,10 +187,10 @@ class Home(QMainWindow):
         self.loadAccountInfo()
 
         self.txt_name = self.findChild(QLineEdit,"txt_name")
-        self.txt_name.returnPressed.connect(lambda:self.finish_editing_name)
+        self.txt_name.returnPressed.connect(self.finish_editing_name)
         self.txt_email = self.findChild(QLineEdit,"txt_email")
         self.txt_password = self.findChild(QLineEdit,"txt_password")
-        self.txt_password.returnPressed.connect(lambda:self.finish_editing_password)
+        self.txt_password.returnPressed.connect(self.finish_editing_password)
         self.txt_gender = self.findChild(QLineEdit,"cb_gender")
 
         self.main_widget = self.findChild(QStackedWidget,"main_widget")
@@ -202,13 +202,13 @@ class Home(QMainWindow):
         self.btn_detail = self.findChild(QPushButton,"btn_detail")
         self.avatar = self.findChild(QLabel,"avatar")
         self.btn_avatar = self.findChild(QPushButton,"btn_avatar")
-        self.btn_avatar.clicked.connect(lambda:self.update_avatar )
+        self.btn_avatar.clicked.connect(self.update_avatar )
 
         self.btn_up_name = self.findChild(QPushButton,"btn_up_name")
-        self.btn_up_name.clicked.connect(lambda:self.unlock_editing_name)
+        self.btn_up_name.clicked.connect(self.unlock_editing_name)
 
         self.btn_up_password = self.findChild(QPushButton,"btn_up_password")
-        self.btn_up_password.clicked.connect(lambda:self.unlock_editing_password)
+        self.btn_up_password.clicked.connect(self.unlock_editing_password)
 
         self.btn_nav_home.clicked.connect(lambda: self.navMainScreen(0))
         self.btn_nav_account.clicked.connect(lambda: self.navMainScreen(1))
@@ -245,7 +245,7 @@ class Home(QMainWindow):
     def loadAccountInfo(self):
         self.txt_name = self.findChild(QLineEdit,"txt_name")
         self.txt_email = self.findChild(QLineEdit,"txt_email")
-        self.txt_name = self.findChild(QLineEdit,"txt_password")
+        self.txt_password = self.findChild(QLineEdit,"txt_password")
 
         self.txt_name.setText(self.user['name'])
         self.txt_password.setText(self.user['password'])
