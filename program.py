@@ -179,8 +179,9 @@ class Home(QMainWindow):
     def __init__(self,user):
         super().__init__()
         uic.loadUi("ui/Home.ui",self)
-        
+
         self.user_id = user
+#       self.id = id
         self.msg = Messagebox()
         
         self.user = get_user_by_id(user)
@@ -191,11 +192,13 @@ class Home(QMainWindow):
         self.txt_email = self.findChild(QLineEdit,"txt_email")
         self.txt_password = self.findChild(QLineEdit,"txt_password")
         self.txt_password.returnPressed.connect(self.finish_editing_password)
-        self.txt_gender = self.findChild(QLineEdit,"cb_gender")
+        self.cb_gender = self.findChild(QComboBox,"cb_gender")
 
         self.main_widget = self.findChild(QStackedWidget,"main_widget")
         self.main_widget.setCurrentIndex(0)
 
+        self.btn_del_account = self.findChild(QPushButton,"btn_del_account")
+#        self.btn_del_account.clicked.connect(self.update_avatar )
         self.btn_nav_home = self.findChild(QPushButton,"btn_nav_home")
         self.btn_nav_account = self.findChild(QPushButton,"btn_nav_account")
         self.btn_nav_menu = self.findChild(QPushButton,"btn_nav_menu")
@@ -214,7 +217,9 @@ class Home(QMainWindow):
         self.btn_nav_account.clicked.connect(lambda: self.navMainScreen(1))
         self.btn_nav_menu.clicked.connect(lambda: self.navMainScreen(2))
         self.btn_detail.clicked.connect(lambda: self.navMainScreen(3))
-        
+    
+#    def delete_account(self):
+#        delete_account(self.user_id,id)
         
     def unlock_editing_name(self):
         self.txt_name.setReadOnly(False)
@@ -225,7 +230,7 @@ class Home(QMainWindow):
         new_name = self.txt_name.text()
         self.txt_name.setReadOnly(True)
         self.msg.success_box("Đã sửa thành công tên")
-        return new_name
+        update_user_name(self.user_id,new_name)
     
     def unlock_editing_password(self):
         self.txt_password.setReadOnly(False)
@@ -233,11 +238,10 @@ class Home(QMainWindow):
         self.txt_password.selectAll()
 
     def finish_editing_password(self):
-        password = self.txt_password.text()
+        new_password = self.txt_password.text()
         self.txt_password.setReadOnly(True)
         self.msg.success_box("Đã sửa thành công mật khẩu")
-        update_user_password(self.user_id,password)
-        return password
+        update_user_password(self.user_id,new_password)
 
     def navMainScreen(self,index):
         self.main_widget.setCurrentIndex(index)
@@ -246,16 +250,19 @@ class Home(QMainWindow):
         self.txt_name = self.findChild(QLineEdit,"txt_name")
         self.txt_email = self.findChild(QLineEdit,"txt_email")
         self.txt_password = self.findChild(QLineEdit,"txt_password")
+        self.btn_nav_account = self.findChild(QPushButton,"btn_nav_account")
 
+        self.btn_nav_account.setText(self.user["name"])
         self.txt_name.setText(self.user['name'])
         self.txt_password.setText(self.user['password'])
         self.txt_email.setText(self.user['email'])
-    
+         
         if self.user["avatar"]:
-            self.btn_avatar.setIcon(QIcon("avatar"))
-            self.avatar.setPixmap(QPixmap("avatar"))
+            self.btn_avatar.setIcon(QIcon(self.user["avatar"]))
+            self.btn_avatar.setIconSize(self.btn_avatar.size())
+            self.avatar.setPixmap(QPixmap(self.user["avatar"]))
             self.avatar.setScaledContents(True)
-        
+
         if not self.user["gender"]:
             self.cb_gender.setCurrentIndex(3)
         elif self.user["gender"] == "Male":
