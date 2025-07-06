@@ -16,7 +16,7 @@
   <property name="layoutDirection">
    <enum>Qt::LayoutDirection::LeftToRight</enum>
   </property>
-  <widget class="QLabel" name="img">
+  <widget class="QLabel" name="lb_img">
    <property name="geometry">
     <rect>
      <x>8</x>
@@ -29,7 +29,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="ten_thanh_phan">
+  <widget class="QLabel" name="lb_name">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -54,7 +54,7 @@
     <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
    </property>
   </widget>
-  <widget class="QLabel" name="dl">
+  <widget class="QLabel" name="lb_description">
    <property name="geometry">
     <rect>
      <x>10</x>

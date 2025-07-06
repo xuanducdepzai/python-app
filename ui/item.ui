@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>371</width>
+    <width>370</width>
     <height>122</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="lb">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -30,37 +30,23 @@ border-radius:10px</string>
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="img_mon">
+  <widget class="QLabel" name="lb_img">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>160</width>
+     <width>100</width>
      <height>100</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>180</x>
-     <y>10</y>
-     <width>181</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background:none;
-border:none</string>
-   </property>
-   <property name="text">
-    <string/>
+   <property name="scaledContents">
+    <bool>true</bool>
    </property>
   </widget>
-  <widget class="QWidget" name="danah_gia" native="true">
+  <widget class="QWidget" name="rating" native="true">
    <property name="geometry">
     <rect>
      <x>180</x>
@@ -70,6 +56,19 @@ border:none</string>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout"/>
+  </widget>
+  <widget class="QLabel" name="lb_name">
+   <property name="geometry">
+    <rect>
+     <x>187</x>
+     <y>15</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
   </widget>
  </widget>
  <resources/>

@@ -4,6 +4,8 @@ from PyQt6.QtGui import *
 from PyQt6.QtCore import *
 from PyQt6 import uic
 from database import *
+from spoonacular_api import *
+from utils import download_image
 
 class Messagebox ():
     def success_box(self, message):
@@ -129,21 +131,21 @@ class Register(QMainWindow):
             self.password.setFocus()
             return
         
-#        if len(password.split()) < 6:
-#            msg.error_box("Mật khẩu phải có tối thiểu 6 ký tự")
-#            self.password.setFocus()
-#            return
+        if len(password) < 6:
+            msg.error_box("Mật khẩu phải có tối thiểu 6 ký tự")
+            self.password.setFocus()
+            return
 
-#        if len(password.split()) > 14:
-#            msg.error_box("Mật khẩu chỉ có tối đa 14 ký tự")
-#            self.password.setFocus()
-#            return
+        if len(password) > 14:
+            msg.error_box("Mật khẩu chỉ có tối đa 14 ký tự")
+            self.password.setFocus()
+            return
 
         if confirm_password == "":
             msg.error_box("Xác nhận mật khẩu không được để trống")
             self.confirm_password.setFocus()
             return
-              
+
         if password != confirm_password:
             msg.error_box("Mật khẩu không trùng")
             self.password.setFocus()
@@ -174,17 +176,67 @@ class Register(QMainWindow):
         self.login = Login()
         self.login.show()
         self.close()
+
+# Updated FoodItem class
+class FoodItem(QWidget):
+    def __init__(self, id, name, img_url, rating):
+        super().__init__()
+        uic.loadUi("ui/item.ui", self)
+
+        self.id = id
+        self.name = name
+        self.img_url = img_url
+        self.rating = rating
         
+        self.setMinimumSize(371, 121)
+
+        self.lb_img = self.findChild(QLabel, "lb_img")
+        self.lb_name = self.findChild(QLabel, "lb_name")
+
+        self.lb_name.setText(name)
+        
+        # Load image
+        pixmap = download_image(img_url)
+        if pixmap:
+            # Scale image to fit
+            scaled_pixmap = pixmap.scaled(
+                self.lb_img.size(), 
+                Qt.AspectRatioMode.KeepAspectRatio, 
+                Qt.TransformationMode.SmoothTransformation
+            )
+            self.lb_img.setPixmap(scaled_pixmap)
+        else:
+            self.lb_img.setText("No Image")
+        
+class IngredientItem(QWidget):
+    def __init__(self, id, name, img, description):
+        super().__init__()
+        uic.loadUi("ui/nguyen_lieu.ui",self)
+
+        self.id = id
+        self.name = name
+        self.img = img
+        self.description = description
+
+
+        self.lb_img = self.findChild(QLabel,"lb_img")
+        self.lb_name = self.findChild(QLabel,"lb_name")
+        self.lb_description = self.findChild(QLabel,"lb_description")
+
+        self.lb_name.setText(name)
+        self.lb_description.setText(description)
+
+        self.lb_img.setPixmap(QPixmap(img))
+    
 class Home(QMainWindow):
-    def __init__(self,user):
+    def __init__(self, user_id):
         super().__init__()
         uic.loadUi("ui/Home.ui",self)
 
-        self.user_id = user
-#       self.id = id
+        self.user_id = user_id
         self.msg = Messagebox()
         
-        self.user = get_user_by_id(user)
+        self.user = get_user_by_id(user_id)
         self.loadAccountInfo()
 
         self.txt_name = self.findChild(QLineEdit,"txt_name")
@@ -202,7 +254,6 @@ class Home(QMainWindow):
         self.btn_nav_home = self.findChild(QPushButton,"btn_nav_home")
         self.btn_nav_account = self.findChild(QPushButton,"btn_nav_account")
         self.btn_nav_menu = self.findChild(QPushButton,"btn_nav_menu")
-        self.btn_detail = self.findChild(QPushButton,"btn_detail")
         self.avatar = self.findChild(QLabel,"avatar")
         self.btn_avatar = self.findChild(QPushButton,"btn_avatar")
         self.btn_avatar.clicked.connect(self.update_avatar )
@@ -212,11 +263,15 @@ class Home(QMainWindow):
 
         self.btn_up_password = self.findChild(QPushButton,"btn_up_password")
         self.btn_up_password.clicked.connect(self.unlock_editing_password)
+        
+        self.lw_food = self.findChild(QListWidget,"lw_food")
+        self.lb_img_first_food = self.findChild(QLabel,"lb_img_first_food")
+        self.lb_name_first_food = self.findChild(QLabel,"lb_name_first_food")
 
         self.btn_nav_home.clicked.connect(lambda: self.navMainScreen(0))
         self.btn_nav_account.clicked.connect(lambda: self.navMainScreen(1))
         self.btn_nav_menu.clicked.connect(lambda: self.navMainScreen(2))
-        self.btn_detail.clicked.connect(lambda: self.navMainScreen(3))
+        self.load_food_list()
     
 #    def delete_account(self):
 #        delete_account(self.user_id,id)
@@ -256,7 +311,7 @@ class Home(QMainWindow):
         self.txt_name.setText(self.user['name'])
         self.txt_password.setText(self.user['password'])
         self.txt_email.setText(self.user['email'])
-         
+        
         if self.user["avatar"]:
             self.btn_avatar.setIcon(QIcon(self.user["avatar"]))
             self.btn_avatar.setIconSize(self.btn_avatar.size())
@@ -281,8 +336,58 @@ class Home(QMainWindow):
             update_user_avatar(self.user_id, file)
             
 
+    def load_food_list(self):
+        # Load multiple recipes
+        food_list = get_random_recipes(number=10)
+        
+        # Clear existing items
+        self.lw_food.clear()
+        
+        # Enable scrolling explicitly
+        self.lw_food.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
+        self.lw_food.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        
+        if 'recipes' in food_list and food_list['recipes']:
+            recipes = food_list['recipes']
+            
+            # Set FIRST recipe on the RIGHT side
+            first_recipe = recipes[0]
+            pixmap = download_image(first_recipe['image'])
+            if pixmap:
+                # Make sure the main image label has size
+                if self.lb_img_first_food.width() == 0:
+                    self.lb_img_first_food.setMinimumSize(300, 200)
+                    
+                scaled_pixmap = pixmap.scaled(
+                    self.lb_img_first_food.size(), 
+                    Qt.AspectRatioMode.KeepAspectRatio, 
+                    Qt.TransformationMode.SmoothTransformation
+                )
+                self.lb_img_first_food.setPixmap(scaled_pixmap)
+            self.lb_name_first_food.setText(first_recipe['title'])
+            readyInMinute = first_recipe['readyInMinutes']
+            
+            # Add ALL recipes to LEFT list
+            for recipe in recipes:
+                # Create QListWidgetItem
+                item = QListWidgetItem()
+                
+                # Create FoodItem widget
+                food_widget = FoodItem(recipe['id'], recipe['title'], recipe['image'], "test")
+                
+                # Set the item size to match widget size
+                item.setSizeHint(QSize(371, 121))  # Use QSize explicitly
+                
+                # Add to list
+                self.lw_food.addItem(item)
+                self.lw_food.setItemWidget(item, food_widget)
+                readyInMinute = recipe['readyInMinutes']
+            
+            print(f"Added {len(recipes)} recipes to list")  # Debug print
+
 if __name__ == "__main__":
     app = QApplication([])
     login = Login()
+    login = Home(1)
     login.show()
     app.exec()
