@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label_64">
+  <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -30,7 +30,7 @@ border-radius:10px</string>
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="img_mon">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -43,7 +43,7 @@ border-radius:10px</string>
     <string/>
    </property>
   </widget>
-  <widget class="QToolButton" name="toolButton">
+  <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
      <x>180</x>
@@ -52,12 +52,6 @@ border-radius:10px</string>
      <height>31</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <pointsize>14</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
    <property name="styleSheet">
     <string notr="true">background:none;
 border:none</string>
@@ -65,6 +59,17 @@ border:none</string>
    <property name="text">
     <string/>
    </property>
+  </widget>
+  <widget class="QWidget" name="danah_gia" native="true">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>50</y>
+     <width>171</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout"/>
   </widget>
  </widget>
  <resources/>
