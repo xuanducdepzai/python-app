@@ -209,7 +209,7 @@ class FoodItem(QWidget):
             self.lb_img.setText("No Image")
         
 class IngredientItem(QWidget):
-    def __init__(self, id, name, img, description):
+    def __init__(self, id, name, img, description,):
         super().__init__()
         uic.loadUi("ui/nguyen_lieu.ui",self)
 
@@ -217,7 +217,6 @@ class IngredientItem(QWidget):
         self.name = name
         self.img = img
         self.description = description
-
 
         self.lb_img = self.findChild(QLabel,"lb_img")
         self.lb_name = self.findChild(QLabel,"lb_name")
@@ -229,7 +228,7 @@ class IngredientItem(QWidget):
         self.lb_img.setPixmap(QPixmap(img))
     
 class Home(QMainWindow):
-    def __init__(self, user_id):
+    def __init__(self, user_id,readyInMinutes,servings,vegetarian,vegan,glutenFree,dairyFree,veryHealthy,cheap,veryPopular,sustainable,lowFodmap,weightWatcherSmartPoints,gaps,healthScore,pricePerServing):
         super().__init__()
         uic.loadUi("ui/Home.ui",self)
 
@@ -238,6 +237,22 @@ class Home(QMainWindow):
         
         self.user = get_user_by_id(user_id)
         self.loadAccountInfo()
+
+        self.readyInMinute = readyInMinutes
+        self.servings = servings
+        self.vegetarian = vegetarian
+        self.vegan = vegan
+        self.glutenFree = glutenFree 
+        self.dairyFree = dairyFree
+        self.veryHealthy = veryHealthy
+        self.cheap = cheap
+        self.veryPopular = veryPopular
+        self.sustainable = sustainable
+        self.lowFodmap = lowFodmap
+        self.weightWatcherSmartPoints = weightWatcherSmartPoints
+        self.gaps = gaps
+        self.healthScore = healthScore
+        self.pricePerServing = pricePerServing
 
         self.txt_name = self.findChild(QLineEdit,"txt_name")
         self.txt_name.returnPressed.connect(self.finish_editing_name)
@@ -336,7 +351,7 @@ class Home(QMainWindow):
             update_user_avatar(self.user_id, file)
             
 
-    def load_food_list(self):
+    def load_food_list(self,):
         # Load multiple recipes
         food_list = get_random_recipes(number=10)
         
@@ -364,9 +379,23 @@ class Home(QMainWindow):
                     Qt.TransformationMode.SmoothTransformation
                 )
                 self.lb_img_first_food.setPixmap(scaled_pixmap)
-            self.lb_name_first_food.setText(first_recipe['title'])
-            readyInMinute = first_recipe['readyInMinutes']
-            
+                self.lb_name_first_food.setText(first_recipe['title'])
+                self.readyInMinute = first_recipe['readyInMinutes']
+                self.servings = first_recipe["servings"]
+                self.vegetarian = first_recipe["vegetarian"]
+                self.vegan = first_recipe["vegan"]
+                self.glutenFree = first_recipe["glutenFree"]
+                self.dairyFree = first_recipe["dairyFree"]
+                self.veryHealthy = first_recipe["veryHealthy"]
+                self.cheap = first_recipe["cheap"]
+                self.veryPopular = first_recipe["veryPopular"]
+                self.sustainable = first_recipe["sustainable"]
+                self.lowFodmap = first_recipe["lowFodmap"]
+                self.weightWatcherSmartPoints = first_recipe["weightWatcherSmartPoints"]
+                self.gaps = first_recipe["gaps"]
+                self.healthScore = first_recipe["healthScore"]
+                self.pricePerServing = first_recipe["pricePerServing"]
+
             # Add ALL recipes to LEFT list
             for recipe in recipes:
                 # Create QListWidgetItem
@@ -381,8 +410,22 @@ class Home(QMainWindow):
                 # Add to list
                 self.lw_food.addItem(item)
                 self.lw_food.setItemWidget(item, food_widget)
-                readyInMinute = recipe['readyInMinutes']
-            
+                self.readyInMinute = recipe['readyInMinutes']
+                self.servings = recipe["servings"]
+                self.vegetarian = recipe["vegetarian"]
+                self.vegan = recipe["vegan"]
+                self.glutenFree = recipe["glutenFree"]
+                self.dairyFree = recipe["dairyFree"]
+                self.veryHealthy = recipe["veryHealthy"]
+                self.cheap = recipe["cheap"]
+                self.veryPopular = recipe["veryPopular"]
+                self.sustainable = recipe["sustainable"]
+                self.lowFodmap = recipe["lowFodmap"]
+                self.weightWatcherSmartPoints = recipe["weightWatcherSmartPoints"]
+                self.gaps = recipe["gaps"]
+                self.healthScore = recipe["healthScore"]
+                self.pricePerServing = recipe["pricePerServing"]
+
             print(f"Added {len(recipes)} recipes to list")  # Debug print
 
 if __name__ == "__main__":
