@@ -9,7 +9,7 @@ def get_random_recipes(number: int):
     response = requests.get(url, params=params)
     return response.json()
 
-print(get_random_recipes(1))
+#print(get_random_recipes(1))
 
 def get_recipe_details(recipe_id: int):
     """Get recipe ingredients and instructions"""

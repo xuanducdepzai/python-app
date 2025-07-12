@@ -179,21 +179,41 @@ class Register(QMainWindow):
 
 # Updated FoodItem class
 class FoodItem(QWidget):
-    def __init__(self, id, name, img_url):
+    def __init__(self, id, name, img_url,healthScore,pricePerServing,cheap,veryHealthy,vegan,servings,dairyFree):
         super().__init__()
         uic.loadUi("ui/item.ui", self)
 
         self.id = id
         self.name = name
         self.img_url = img_url
-        
-        self.setMinimumSize(371, 121)
+        self.healthScore = healthScore
+        self.pricePerServing = pricePerServing
+        self.cheap = cheap
+        self.veryHealthy = veryHealthy
+        self.vegan = vegan
+        self.servings = servings
+        self.dairyFree = dairyFree
+
+        self.setMinimumSize(345, 121)
 
         self.lb_img = self.findChild(QLabel, "lb_img")
         self.lb_name = self.findChild(QLabel, "lb_name")
-
+        self.lb_pricePerServing = self.findChild(QLabel,"lb_pricePerServing")
+        self.lb_healty_score = self.findChild(QLabel,"lb_healthScore")
         self.lb_name.setText(name)
+        self.lb_health_score = self.findChild(QLabel, "lb_healthScore")
+        self.lb_2 = self.findChild(QLabel,"lb_2")
+        self.lb_1 = self.findChild(QLabel,"lb_1")
+        self.lb_health_score.setText(str(healthScore))
+        self.lb_pricePerServing.setText(str(pricePerServing))   
+        if cheap == True:
+            self.lb_1.setText("CHEAP")
+        if not cheap == False:
+            self.lb_1.setText("No")
+        if veryHealthy == True:
+            self.lb_2.setText("VERRY HEALTHY")
         
+
         # Load image
         pixmap = download_image(img_url)
         if pixmap:
@@ -269,8 +289,9 @@ class Home(QMainWindow):
         self.btn_nav_home.clicked.connect(lambda: self.navMainScreen(0))
         self.btn_nav_account.clicked.connect(lambda: self.navMainScreen(1))
         self.btn_nav_menu.clicked.connect(lambda: self.navMainScreen(2))
+        
         self.load_food_list()
-    
+
 #    def delete_account(self):
 #        delete_account(self.user_id,id)
         
@@ -403,10 +424,10 @@ class Home(QMainWindow):
                 item = QListWidgetItem()
                 
                 # Create FoodItem widget
-                food_widget = FoodItem(recipe['id'], recipe['title'], recipe['image'])
+                food_widget = FoodItem(recipe['id'], recipe['title'], recipe['image'], recipe["healthScore"], recipe["pricePerServing"], recipe["cheap"], recipe["veryHealthy"], recipe["dairyFree"], recipe["vegan"], recipe["servings"] )
                 
                 # Set the item size to match widget size
-                item.setSizeHint(QSize(371, 121))  # Use QSize explicitly
+                item.setSizeHint(QSize(355, 121))  # Use QSize explicitly
                 
                 # Add to list
                 self.lw_food.addItem(item)
