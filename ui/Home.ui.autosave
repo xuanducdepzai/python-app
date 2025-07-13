@@ -30,7 +30,7 @@
      </size>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="home">
      <widget class="QPushButton" name="btn_nav_menu">
@@ -767,7 +767,7 @@ border-radius:15px</string>
        <string/>
       </property>
      </widget>
-     <widget class="QLabel" name="label_6">
+     <widget class="QLabel" name="img_detail">
       <property name="geometry">
        <rect>
         <x>260</x>
@@ -799,7 +799,7 @@ border-radius:15px</string>
        <string> Materials</string>
       </property>
      </widget>
-     <widget class="QListWidget" name="listWidget">
+     <widget class="QListWidget" name="lw_materials">
       <property name="geometry">
        <rect>
         <x>130</x>
@@ -832,7 +832,7 @@ border-radius:15px</string>
        <string>How to make?</string>
       </property>
      </widget>
-     <widget class="QListWidget" name="listWidget_2">
+     <widget class="QListWidget" name="lw_howtomake">
       <property name="geometry">
        <rect>
         <x>130</x>

@@ -209,7 +209,7 @@ class FoodItem(QWidget):
         if cheap == True:
             self.lb_1.setText("CHEAP")
         if not cheap == False:
-            self.lb_1.setText("No")
+            self.lb_1.setText("No   ")
         if veryHealthy == True:
             self.lb_2.setText("VERRY HEALTHY")
         
@@ -438,6 +438,6 @@ class Home(QMainWindow):
 if __name__ == "__main__":
     app = QApplication([])
     login = Login()
-    login = Home(1)
+#    login = Home(1)
     login.show()
     app.exec()
