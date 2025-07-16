@@ -75,7 +75,7 @@ def update_user_name(user_id,name):
     conn.commit()
     conn.close()
 
-def update_user_name(user_id,gender):
+def update_user_gender(user_id,gender):
     conn = connect_db()
     conn.row_factory = dict_factory  # Gán đúng vị trí
     cursor = conn.cursor()
@@ -87,15 +87,7 @@ def upadate_user(user_id,name,password):
     conn = connect_db()
     cursor = conn.cursor()
     cursor.row_factory = dict_factory
-    cursor.execute("Upadte users UPDATE name = ?,user_id = ?,password = ? WHErE id = ?",(name,user_id,password))
-    conn.commit()
-    conn.close
-
-def upadate_gender(user_id,gender):
-    conn = connect_db()
-    conn.row_factory = dict_factory  # Gán đúng vị trí
-    cursor = conn.cursor()
-    cursor.execute("Upadte users UPDATE gender = ? WHErE id = ?",(gender,user_id))
+    cursor.execute("UPA users UPDATE name = ?,user_id = ?,password = ? WHErE id = ?",(name,user_id,password))
     conn.commit()
     conn.close
 
