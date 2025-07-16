@@ -104,7 +104,8 @@ class Register(QMainWindow):
             input.setEchoMode(QLineEdit.EchoMode.Password)
             button.setIcon(QIcon("img/eye-slash-solid.png"))
     
-    def register(self):
+    def register(self,user_id):
+        self.user_id = user_id
         msg = Messagebox()
         name = self.name.text().strip()
         email = self.email.text().strip()
@@ -163,6 +164,8 @@ class Register(QMainWindow):
             return
 
         create_user(name,email,password)
+        gender = "Ofther"
+        update_user_gender(self.user_id,gender)
         msg.error_box("Đăng ký thành công")
         self.show_login()
 
@@ -262,7 +265,10 @@ class Home(QMainWindow):
         self.txt_email = self.findChild(QLineEdit,"txt_email")
         self.txt_password = self.findChild(QLineEdit,"txt_password")
         self.txt_password.returnPressed.connect(self.finish_editing_password)
+        self.cb_gender.currentIndexChanged.connect(self.on_gender_changed)
         self.cb_gender = self.findChild(QComboBox,"cb_gender")
+        self.btn_search = self.findChild(QLineEdit,"btn_search")
+        self.txt_search = self.findChild(QLineEdit,"txt_search")
 
         self.main_widget = self.findChild(QStackedWidget,"main_widget")
         self.main_widget.setCurrentIndex(0)
@@ -302,6 +308,7 @@ class Home(QMainWindow):
 
     def finish_editing_name(self):
         new_name = self.txt_name.text()
+        self.btn_nav_account.setText(new_name)
         self.txt_name.setReadOnly(True)
         self.msg.success_box("Đã sửa thành công tên")
         update_user_name(self.user_id,new_name)
@@ -354,6 +361,12 @@ class Home(QMainWindow):
             self.avatar.setPixmap(QPixmap(file))    
             update_user_avatar(self.user_id, file)
             
+    def on_gender_changed(self, index):
+        gender_text = self.cb_gender.currentText()
+        if gender_text.strip() in ["", "---", "Chọn giới tính"]:
+            return
+        update_user_gender(self.user_id, gender_text)
+        self.msg.success_box("Đã cập nhật giới tính")
 
     def load_food_list(self,):
         # Load multiple recipes
@@ -435,9 +448,12 @@ class Home(QMainWindow):
 
             print(f"Added {len(recipes)} recipes to list")  # Debug print
 
+    def search_recipe(self,):
+        food_search  = search_recipe
+
 if __name__ == "__main__":
     app = QApplication([])
     login = Login()
-#    login = Home(1)
+    login = Home(10)
     login.show()
     app.exec()
