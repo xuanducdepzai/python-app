@@ -21,6 +21,16 @@ def get_recipe_details(recipe_id: int):
 def search_recipe(query: str):
     """Search recipes by name"""
     url = f"{base_url}/recipes/complexSearch"
-    params = {'apiKey': key, 'query': query, 'number': 10}
-    response = requests.get(url, params=params)
+    params = {
+        'apiKey': key, 
+        'query': query, 
+        'number': 10,
+        'addRecipeInformation': True,  # Để lấy thông tin chi tiết như get_random_recipes
+        'fillIngredients': True
+    }
+    
+    print(url)
+    print(params)
+    
+    response = requests.get(url, params=params, timeout=10)
     return response.json()
